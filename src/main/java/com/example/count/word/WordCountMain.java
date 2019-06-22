@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class WordCount {
+public class WordCountMain {
 
     public static void main(String[] args) throws Exception {
         String outputFilePath = args[1];
@@ -32,7 +32,7 @@ public class WordCount {
         configuration.set("mapreduce.reduce.cpu.vcores", "1");
         
         Job job = Job.getInstance(configuration, "word count");
-        job.setJarByClass(WordCount.class);
+        job.setJarByClass(WordCountMain.class);
         job.setMapperClass(WordCountMapper.class);
         job.setCombinerClass(WordCountReducer.class);
         job.setReducerClass(WordCountReducer.class);

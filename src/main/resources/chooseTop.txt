@@ -1,0 +1,10 @@
+shanghai 549
+hangzhou 349
+shenzhen 890
+guangzhou 700
+dalian 555
+chengdu 239
+huizhou 377
+sichuan 390
+liaoning 500
+beijing 900

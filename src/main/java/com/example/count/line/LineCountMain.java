@@ -9,7 +9,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class LineCount {
+public class LineCountMain {
 
     public static void main(String[] args) throws Exception {
         String outputFilePath = args[1];
@@ -17,7 +17,7 @@ public class LineCount {
 
         Configuration configuration = new Configuration();
         Job job = Job.getInstance(configuration, "line count");
-        job.setJarByClass(LineCount.class);
+        job.setJarByClass(LineCountMain.class);
         job.setMapperClass(LineCountMapper.class);
         job.setCombinerClass(LineCountReducer.class);
         job.setReducerClass(LineCountReducer.class);
