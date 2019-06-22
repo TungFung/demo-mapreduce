@@ -1,4 +1,4 @@
-package com.example;
+package com.example.count.line;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class DistributedCountMapper extends Mapper<Object, Text, Text, IntWritable> {
+public class LineCountMapper extends Mapper<Object, Text, Text, IntWritable> {
 
     private static final Text KEY = new Text("count");
 
