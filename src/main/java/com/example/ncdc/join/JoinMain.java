@@ -28,6 +28,8 @@ public class JoinMain {
         Configuration configuration = new Configuration();
         Job job = Job.getInstance(configuration, "data join");//下面的信息其实都是在配置job中的configuration
 
+        job.setJarByClass(JoinMain.class);
+
         //InputFormat, Mapper, 不同格式的文件，不同的mapper处理, 同时也是不同的格式输入
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, StationMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, DataMapper.class);
